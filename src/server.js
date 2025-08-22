@@ -18,8 +18,7 @@ server.use(express.urlencoded({ extended: true }));
 // routes
 server.use(routes);
 
-if (require.main === module) {
-  server.listen(3000, () => console.log("rodando"));
-}
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => console.log("rodando"));
 
 module.exports = server;
